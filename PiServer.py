@@ -4,13 +4,18 @@
 
 from pythonosc import dispatcher
 from pythonosc import osc_server
-#import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
+# import time
 
 
 client_ip = "127.0.0.1"
 client_port = 5005
 
-GPIO.setmode(GPIO.BOARD)
+# GPIO.setmode(GPIO.BOARD)
+#GPIO.setmode(GPIO.BCM)
+#GPIO.setwarnings(False)
+#GPIO.setup(18,GPIO.OUT)
+
 
 
 
@@ -18,12 +23,10 @@ def print_mode(unused_addr, args, mode):
     print("[{0}] ~ {1}".format(args[0], mode))
     if (mode == "0"):
         print("Mode: Off")
-        #GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-        #GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        #GPIO.output(18,GPIO.LOW)
     if (mode == "1"):
         print("Mode: On")
-        #GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-        #GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.output(18,GPIO.HIGH)
 
 
 if __name__ == "__main__":
