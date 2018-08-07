@@ -6,9 +6,6 @@ Completed
 
 -sending of OSC commands
 
-
-In Progres
-
 -control of GPIO pins on the Pi
 
 
