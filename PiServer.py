@@ -16,18 +16,18 @@ gpioPin = 25
 # setup the GPIO pins
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-GPIO.setup(gpioPin,GPIO.OUT)
+GPIO.setup(gpioPin, GPIO.OUT)
 
 
-#print output
+# print output
 def print_mode(unused_addr, args, mode):
     print("[{0}] ~ {1}".format(args[0], mode))
-    if (mode == False):
+    if mode == False:
         print("Mode: Off")
-        GPIO.output(gpioPin,False)
-    if (mode == True):
+        GPIO.output(gpioPin, False)
+    if mode == True:
         print("Mode: On")
-        GPIO.output(gpioPin,True)
+        GPIO.output(gpioPin, True)
 
 
 if __name__ == "__main__":
